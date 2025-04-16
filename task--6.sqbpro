@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/nagap/Desktop/task--6.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="877"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="orders" custom_title="0" dock_id="9" table="4,6:mainorders"/><dock_state state="000000ff00000000fd00000001000000020000039100000257fc0100000007fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500320100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500330100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500340100000000ffffffff0000000000000000fc00000000000003910000000000fffffffaffffffff0100000003fb000000160064006f0063006b00420072006f00770073006500350100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500360100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500370100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500380100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500390100000000ffffffff0000011e00ffffff000002690000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">SELECT 
+    STRFTIME('%Y', order_date) AS year,
+    STRFTIME('%m', order_date) AS month,
+    COUNT(DISTINCT order_id) AS volume,
+    SUM(total_price) AS revenue
+FROM orders
+GROUP BY year, month
+ORDER BY year, month
+LIMIT 12;
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
